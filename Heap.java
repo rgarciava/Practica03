@@ -1,14 +1,15 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Heap<T extends Comparable<T>> {
-     private List<T> heap;
+public class Heap<E extends Comparable<E>> {
+     private List<E> heap;
 
     public Heap() {
         heap = new ArrayList<>();
     }
 
-    public void insert(T item) {
+    public void insert(E item) {
         heap.add(item);
         int index = heap.size() - 1;
         while (index > 0 && heap.get(index).compareTo(heap.get(parent(index))) > 0) {
@@ -18,14 +19,14 @@ public class Heap<T extends Comparable<T>> {
     }
 
 
-    
-    public void insert(T item) {
+
+    public void insert(E item) {
         heap.add(item);
         percolateUp(heap.size() - 1);
     }
 
     // clase insert
-    public void insert(T item, T a[]) {
+    public void insert(E item, T a[]) {
         a[++n] = x;
         T temp;
         for (j = n; j > 1 && a[j] > a[j / 2]; j /= 2) {
@@ -37,7 +38,7 @@ public class Heap<T extends Comparable<T>> {
     }
 
     // clase eliminar
-    public void eliminar( T a[] ) {
+    public void eliminar( E a[] ) {
         m = a[1]; // La variable m lleva el máximo
         a[1] = a[n--];
         j = 1;
