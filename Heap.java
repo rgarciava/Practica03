@@ -2,12 +2,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Heap<T extends Comparable<T>> {
-    private List<T> heap;
+     private List<T> heap;
 
     public Heap() {
         heap = new ArrayList<>();
     }
 
+    public void insert(T item) {
+        heap.add(item);
+        int index = heap.size() - 1;
+        while (index > 0 && heap.get(index).compareTo(heap.get(parent(index))) > 0) {
+            swap(index, parent(index));
+            index = parent(index);
+        }
+    }
+
+
+    
     public void insert(T item) {
         heap.add(item);
         percolateUp(heap.size() - 1);
