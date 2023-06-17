@@ -1,4 +1,4 @@
-# Practica03
+# Practica03 EDA Teoria Grupo A
 
 ## Alumnos:
 ### Garcia Valdivia Ronald Pablo 
